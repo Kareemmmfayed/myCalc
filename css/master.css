@@ -1,0 +1,174 @@
+:root {
+    --back: #3b4664;
+    --but-one: #eae3db;
+    --but-two: #647299;
+    --but-three: #d13f30;
+    --screen: #181f32;
+    --body: #252d44;
+    --border-but: #b4a599;
+    --border-but2: #414f76;
+    --border-but3: #93271a;
+    --hover1: #ffffff;
+    --hover2: #a2b3e1;
+    --hover3: #f96c5b;
+}
+body {
+    font-family: 'Poppins', sans-serif;
+    height: 100vh;
+    width: 100vw;
+}
+.main {
+    width: 100%;
+    height: 100%;
+    background-color: var(--back);
+}
+.calc {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+    width: 430px;
+    height: 500px;
+    background-color: var(--back);
+}
+.calc .top > span {
+    font-size: 22px;
+    color: white;
+}
+.calc .top .theme span {
+    position: absolute;
+    color: white;
+}
+.calc .top .theme > span:first-of-type {
+    top: 16px;
+    right: 70px;
+    font-weight: bold;
+    font-size: 10px;
+}
+.calc .top .theme > span:nth-of-type(2) {
+    top: -2px;
+    right: 40px;
+    font-weight: bold;
+    font-size: 10px;
+}
+.calc .top .theme > span:nth-of-type(3) {
+    top: -2px;
+    right: 1px;
+    font-weight: bold;
+    font-size: 10px;
+}
+.tog {
+    background-color: var(--screen);
+    width: 54px;
+    height: 19px;
+    top: 15px;
+    right: -4px;
+    border-radius: 15px;
+    cursor: pointer;
+}
+.tog span {
+    background-color: var(--but-three);
+    border-radius: 50%;
+    width: 12px;
+    height: 12px;
+    top: 3px;
+    left: 4px;
+    transition: 0.3s;
+}
+.screen {
+    display: flex;
+    direction: rtl;
+    align-items: center;
+    width: 102%;
+    height: 100px;
+    right: -4px;
+    background-color: var(--screen);
+    position: absolute;
+    font-size: 68px;
+    top: 45px;
+    border-radius: 8px;
+    color: white;
+    font-weight: bold;
+    overflow: hidden;
+}
+.body {
+    width: 102%;
+    position: absolute;
+    top: 170px;
+    right: -4px;
+    height: 380px;
+    background-color: var(--body);
+    border-radius: 8px;
+    padding: 30px;
+}
+.grid-container {
+    display: grid;
+    gap: 25px;
+    grid-template-columns: auto auto auto auto;
+}
+.grid-item {
+    background-color: var(--but-one);
+    color: var(--back);
+    cursor: pointer;
+    font-size: 30px;
+    text-align: center;
+    font-weight: bolder;
+    cursor: pointer;
+    border-radius: 8px;
+    border-bottom: 3px solid var(--border-but);
+}
+.body .reset {
+    grid-column: 1 / 3;
+    background-color: var(--but-two);
+    border-bottom: 3px solid var(--border-but2);
+} 
+.body .equal {
+    grid-column: 3 / 5;
+    background-color: var(--but-three);
+    color: white;
+    border-bottom: 3px solid var(--border-but3);
+} 
+.body .del {
+    background-color: var(--but-two);
+    border-bottom: 3px solid var(--border-but2);
+}
+.body .del span {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 20px;
+    color: white;
+}
+.body .reset span {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 20px;
+    color: white;
+    text-transform: uppercase;
+}
+.grid-item:hover {
+    background-color: var(--hover1);
+}
+.del:hover ,
+.reset:hover {
+    background-color: var(--hover2);
+}
+.equal:hover {
+    background-color: var(--hover3);
+}
+.theme .tog:hover span {
+    background-color: var(--hover3);
+}
+@media (max-width: 576px) { 
+    .calc {
+        width: 310px; 
+        height: 542px;
+    }
+    .grid-container {
+        gap: 12px;
+    }
+    .grid-item {
+        font-size: 36px;
+    } 
+
+}
